@@ -14,7 +14,12 @@ public class LeapYearTest {
 
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
-        return Arrays.asList(new Object[][]{{2001, false}});
+        return Arrays.asList(new Object[][]{
+                {2001, false},
+                {1996, true},
+                {1900, false},
+                {2000, true},
+        });
     }
 
     private int year;
@@ -26,23 +31,8 @@ public class LeapYearTest {
     }
 
     @Test
-    public void year_2001_should_not_be_leap() {
+    public void leap_year() {
         assertThat(isLeapYear(year)).isEqualTo(expected);
-    }
-
-    @Test
-    public void year_1996_should_be_leap() {
-        assertThat(isLeapYear(1996)).isEqualTo(true);
-    }
-
-    @Test
-    public void year_1900_should_be_leap() {
-        assertThat(isLeapYear(1900)).isEqualTo(false);
-    }
-
-    @Test
-    public void year_2000_should_be_leap() {
-        assertThat(isLeapYear(2000)).isEqualTo(true);
     }
 
     private boolean isLeapYear(int year) {

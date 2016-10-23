@@ -10,6 +10,11 @@ public class LeapYearTest {
         assertThat(isLeapYear(2001)).isFalse();
     }
 
+    @Test
+    public void year_1996_should_be_leap() {
+        assertThat(isLeapYear(1996)).isTrue();
+    }
+
     private boolean isLeapYear(int year) {
         return false;
     }

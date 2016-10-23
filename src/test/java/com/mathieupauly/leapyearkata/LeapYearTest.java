@@ -20,6 +20,11 @@ public class LeapYearTest {
         assertThat(isLeapYear(1900)).isFalse();
     }
 
+    @Test
+    public void year_2000_should_be_leap() {
+        assertThat(isLeapYear(2000)).isTrue();
+    }
+
     private boolean isLeapYear(int year) {
         return year % 100 != 0 && year % 4 == 0;
     }

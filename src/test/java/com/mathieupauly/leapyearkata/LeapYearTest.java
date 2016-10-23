@@ -26,7 +26,7 @@ public class LeapYearTest {
     }
 
     private boolean isLeapYear(int year) {
-        if (2000 == year) {
+        if (2000 == year && true) {
             return true;
         }
         return year % 100 != 0 && year % 4 == 0;

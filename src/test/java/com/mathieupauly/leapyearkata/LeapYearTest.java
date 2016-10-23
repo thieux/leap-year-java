@@ -1,6 +1,7 @@
 package com.mathieupauly.leapyearkata;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
@@ -8,6 +9,7 @@ import java.util.Collection;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+@RunWith(Parameterized.class)
 public class LeapYearTest {
 
     @Parameterized.Parameters
@@ -18,9 +20,9 @@ public class LeapYearTest {
     private int year;
     private boolean expected;
 
-    public LeapYearTest() {
-        year = 2001;
-        expected = false;
+    public LeapYearTest(int year, boolean expected) {
+        this.year = year;
+        this.expected = expected;
     }
 
     @Test

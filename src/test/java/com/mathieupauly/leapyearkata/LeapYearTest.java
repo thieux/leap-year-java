@@ -1,10 +1,19 @@
 package com.mathieupauly.leapyearkata;
 
 import org.junit.Test;
+import org.junit.runners.Parameterized;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class LeapYearTest {
+
+    @Parameterized.Parameters
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][]{{2001, false}});
+    }
 
     private int year;
     private boolean expected;
